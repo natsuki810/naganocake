@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2023_12_09_115155) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "shipping_addresses", force: :cascade do |t|
+  create_table "shopping_addresses", force: :cascade do |t|
     t.integer "customer_id", null: false
     t.string "postal_code", null: false
     t.string "address", null: false
