@@ -9,3 +9,16 @@ Admin.create!(
   email: "11111@gmail.com",
   password: "111111"
 )
+
+# Customer.create!(
+#   email:"aaa@gmail.com",
+#   last_name:"aa",
+#   first_name:"aa",
+#   last_name_kana:"aa",
+#   first_name_kana:"aa",
+#   postal_code:"000000",
+#   address:"aa",
+#   telephone_number:"00000000000",
+#   is_active:false,
+#   password:"aaaaaa"
+#   )

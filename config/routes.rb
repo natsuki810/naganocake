@@ -25,9 +25,12 @@ Rails.application.routes.draw do
     get "/home/about" => "homes#about", as: "about"
     get "/customers/mypage" => "customers#show", as: "customer"
     get "/customers/mypage/edit" => "customers#edit"
+    get "customers/confirm" => "customers#confirm"
+    patch "customers/withdrawal" => "customers#withdrawal"
     resources :items, only: [:index]
     resources :cart_items, only: [:index]
     resources :shopping_addresses, only: [:index]
     resources :orders, only: [:index]
+    resources :genres, only: [:new, :index]
   end
 end
