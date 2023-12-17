@@ -15,9 +15,9 @@ Rails.application.routes.draw do
   namespace :admin do
    get "top" => "homes#top", as: "top"
    resources :orders, only: [:show, :update]
-   resources :items, only: [:index]
+   resources :items, only: [:new, :create, :index]
    resources :customers, only: [:index]
-   resources :genres, only: [:index]
+   resources :genres, only: [:new, :create, :index, :edit, :update]
   end
 
   scope module: :public do
@@ -31,6 +31,5 @@ Rails.application.routes.draw do
     resources :cart_items, only: [:index]
     resources :shopping_addresses, only: [:index]
     resources :orders, only: [:index]
-    resources :genres, only: [:new, :index]
   end
 end
