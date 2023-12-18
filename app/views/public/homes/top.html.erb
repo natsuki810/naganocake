@@ -23,6 +23,46 @@
       </div>
     </div>
   </div>
-
+  <div class="row">
+    <div class="col-4"></div>
+    <div class="col-3">新着商品</div>
+  </div>
+  <div class="row">
+    <div class="col-4"></div>
+  <% @items.each do |item| %>
+  <% if @count == 4 %>
+  <% break %>
+  <% end %>
+  <div class="col-2">
+  <table class="item table">
+    <tr>
+      <td>
+    <% if item.image.attached? %>
+     <%= image_tag item.image, size: "50x50" %>
+    <% else %>
+     <%= image_tag 'no_image', size: "50x50" %>
+    <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+    <%= item.name %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+    ¥<%= item.price %>
+    <% @count += 1 %>
+      </td>
+    </tr>
+  </table>
+  </div>
+  <% end %>
+  </div>
+  <div class="row">
+    <div class="col-12 text-right">
+     <%= link_to "全ての商品を見る>", admin_items_path %>
+    </div>
+  </div>
 </div>
 <%= link_to "log_out", destroy_customer_session_path, method: :delete %>
