@@ -15,8 +15,8 @@ Rails.application.routes.draw do
   namespace :admin do
    get "top" => "homes#top", as: "top"
    resources :orders, only: [:show, :update]
-   resources :items, only: [:new, :create, :index, :show]
-   resources :customers, only: [:index]
+   resources :items, only: [:new, :create, :index, :show, :edit, :update]
+   resources :customers, only: [:index, :show, :edit]
    resources :genres, only: [:new, :create, :index, :edit, :update]
   end
 
@@ -27,7 +27,7 @@ Rails.application.routes.draw do
     get "/customers/mypage/edit" => "customers#edit"
     get "customers/confirm" => "customers#confirm"
     patch "customers/withdrawal" => "customers#withdrawal"
-    resources :items, only: [:index]
+    resources :items, only: [:index, :show]
     resources :cart_items, only: [:index]
     resources :shopping_addresses, only: [:index]
     resources :orders, only: [:index]

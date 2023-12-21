@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <%= render 'list', item: @item %>
+    <div class="item col-3">
+      <% if @item.image.attached? %>
+        <%= image_tag @item.image, size: "200x200" %>
+      <% else %>
+        <%= image_tag 'no_image', size: "200x200" %>
+      <% end %>
+    </div>
+    <div class="col-1"></div>
+    <div class="item col-5">
+      <table class="item table table-borderless">
+        <tr>
+          <th><%= @item.name %></th>
+        </tr>
+        <tr>
+          <th><%= @item.introduction %></th>
+        </tr>
+        <tr>
+          <th><%= @item.genre.name %></th>
+        </tr>
+        <tr>
+          <th><%= @item.price.to_s(:delimited) %>円</th>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
