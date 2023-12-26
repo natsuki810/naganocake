@@ -21,7 +21,14 @@
           <th><%= @item.genre.name %></th>
         </tr>
         <tr>
-          <th><%= @item.price.to_s(:delimited) %>円</th>
+          <th>¥<%= @item.add_tax_price.to_s(:delimited) %>（税込）</th>
+        </tr>
+        <tr>
+          <th><%= form_with model: @cart_item, url: cart_items_path do |f| %>
+          <%= f.select :amount, *[1..10] %>
+          <%= f.hidden_field :item_id, :value => @item.id %>
+          <%= f.submit 'カートに入れる', class:"btn btn-success" %>
+          <% end %></th>
         </tr>
       </table>
     </div>

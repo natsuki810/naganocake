@@ -1,0 +1,63 @@
+<div class="container">
+<%= form_with model: @customer, url: admin_customer_path do |f| %>
+  <div class="row">
+    <div class="titel col-4">
+     <%= @customer.full_name %>さんの会員情報編集
+    </div>
+  </div>
+  <div class="row">
+    <table class="table table-borderless">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="col">会員ID</th>
+          <td scope="col"><%= @customer.id %></td>
+        </tr>
+        <tr>
+          <th scope="col">氏名</th>
+          <td scope="col"><%= f.text_field :last_name, class: "form-control" %></td>
+          <td><%=f.text_field :first_name, class: "form-control" %></td>
+        </tr>
+        <tr>
+          <th scope="col">フリガナ</th>
+          <td scope="col"><%= f.text_field :last_name_kana, class: "form-control" %></td>
+          <td><%= f.text_field :first_name_kana, class: "form-control" %></td>
+        </tr>
+        <tr>
+          <th scope="col">郵便番号</th>
+          <td scope="col"><%= f.text_field :postal_code, class: "form-control" %></td>
+        </tr>
+        <tr>
+          <th scope="col">住所</th>
+          <td scope="col"><%= f.text_field :address, class: "form-control" %></td>
+        </tr>
+        <tr>
+          <th scope="col">電話番号</th>
+          <td scope="col"><%= f.text_field :telephone_number, class: "form-control" %></td>
+        </tr>
+        <tr>
+          <th scope="col">メールアドレス</th>
+          <td scope="col"><%= f.text_field :email, class: "form-control" %></td>
+        </tr>
+        <tr>
+          <th scope="col">会員ステータス</th>
+          <td scope="col">
+              <%= f.radio_button :is_active, "true" %>
+              <%= f.label :is_active, "有効" %>
+              <%= f.radio_button :is_active, "false" %>
+              <%= f.label :is_active, "無効" %>
+          </td>
+        </tr>
+        <tr>
+          <th scope="col"></th>
+          <td scope="col"><%= f.submit '編集する', class: "btn btn-success" %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <% end %>
+</div>

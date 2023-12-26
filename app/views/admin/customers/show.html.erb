@@ -4,44 +4,57 @@
      <%= @customer.full_name %>さんの会員詳細
     </div>
   </div>
-  <table class="table table-bordered">
-    <tr>
-      <th>会員ID</th>
-      <th><%= @customer.id %></th>
-    </tr>
-    <tr>
-      <th>氏名</th>
-      <th><%= @customer.last_name %><%= @customer.first_name %></th>
-    </tr>
-    <tr>
-      <th>フリガナ</th>
-      <th><%= @customer.last_name_kana %><%= @customer.first_name_kana %></th>
-    </tr>
-    <tr>
-      <th>郵便番号</th>
-      <th><%= @customer.postal_code %></th>
-    </tr>
-    <tr>
-      <th>住所</th>
-      <th><%= @customer.address %></th>
-    </tr>
-    <tr>
-      <th>電話番号</th>
-      <th><%= @customer.telephone_number %></th>
-    </tr>
-    <tr>
-       <th>メールアドレス</th>
-      <th><%= @customer.email %></th>
-    </tr>
-    <tr>
-      <th>会員ステータス</th>
-      <th>
-       <% if @customer.is_active %>
-        <span class="text-success">有効</span>
-       <% else %>
-        <span class="text-secondary">無効</span>
-       <% end %>
-      </th>
-    </tr>
-  </table>
+  <div class="row">
+    <table class="table table-borderless">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="col">会員ID</th>
+          <td scope="col"><%= @customer.id %></td>
+        </tr>
+        <tr>
+          <th scope="col">氏名</th>
+          <td scope="col"><%= @customer.last_name %><%= @customer.first_name %></td>
+        </tr>
+        <tr>
+          <th scope="col">フリガナ</th>
+          <td scope="col"><%= @customer.last_name_kana %><%= @customer.first_name_kana %></td>
+        </tr>
+        <tr>
+          <th scope="col">郵便番号</th>
+          <td scope="col"><%= @customer.postal_code %></td>
+        </tr>
+        <tr>
+          <th scope="col">住所</th>
+          <td scope="col"><%= @customer.address %></td>
+        </tr>
+        <tr>
+          <th scope="col">電話番号</th>
+          <td scope="col"><%= @customer.telephone_number %></td>
+        </tr>
+        <tr>
+          <th scope="col">メールアドレス</th>
+          <td scope="col"><%= @customer.email %></td>
+        </tr>
+        <tr>
+          <th scope="col">会員ステータス</th>
+          <td scope="col">
+              <% if @customer.is_active %>
+              <span class="text-success">有効</span>
+              <% else %>
+              <span class="text-secondary">無効</span>
+              <% end %>
+          </td>
+        </tr>
+        <tr>
+          <th scope="col"></th>
+          <td scope="col"><%= link_to "編集する", edit_admin_customer_path, class: "btn btn-success" %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

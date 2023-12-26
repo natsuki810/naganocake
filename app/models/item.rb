@@ -1,9 +1,10 @@
 class Item < ApplicationRecord
   belongs_to :genre
   has_one_attached :image
+  has_many :cart_items
 
   def add_tax_price
-     (self.price * 1.10).ceil
+     (price * 1.1).floor
   end
 
 end
