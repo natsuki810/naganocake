@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="row">
+    <div class="col">注文情報確認</div>
+  </div>
+  <div class="row">
+    <div class="col-8">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>商品名</th>
+            <th>単価（税込）</th>
+            <th>数量</th>
+            <th>小計</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @customer.cart_items.each do |cart_item| %>
+          <tr>
+            <td><% cart_item.item.image %>
+                <% if cart_item.item.image.attached? %>
+                  <%= image_tag cart_item.item.image, size: "50x50" %>
+                <% else %>
+                  <%= image_tag 'no_image', size: "50x50" %>
+                <% end %>
+                <%= cart_item.item.name %></td>
+            <td><%= cart_item.item.add_tax_price %></td>
+            <td><%= cart_item.amount %></td>
+            <td><%= cart_item.subtotal %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-1"></div>
+    <div class="col-3">
+      <table class="table table-bordered">
+        <tr>
+          <th>送料</th>
+          <th></th>
+          <th>商品合計</th>
+          <th></th>
+          <th>請求金額</th>
+
+        </tr>
+      </table>
+    </div>
+  </div>
+      <div class="row">
+        <div class="col-4">支払い方法</div>
+        <div class="col-8"><%= Order.payment_methods_i18n[@order.payment_method.to_sym]  %></div>
+      </div>
+      <div class="row">
+        <div class="col-4">お届け先</div>
+        <div class="col-8">〒<%= @order.postal_code %><%= @order.address %><rb><%= @order.name %></div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <%= link_to "注文を確定する", orders_complete_path, class:"btn btn-success" %>
+        </div>
+      </div>
+</div>
