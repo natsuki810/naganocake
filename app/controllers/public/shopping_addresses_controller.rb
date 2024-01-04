@@ -14,6 +14,7 @@ class Public::ShoppingAddressesController < ApplicationController
   end
 
   def index
+    @shopping_address = ShoppingAddress.new
     @shopping_addresses = ShoppingAddress.all
   end
 
