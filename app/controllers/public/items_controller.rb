@@ -1,8 +1,8 @@
 class Public::ItemsController < ApplicationController
-
+  before_action :authenticate_customer!
   def index
-    @items = Item.where(is_active: true).order(created_at: "DESC")
-    @items = Item.page(params[:page]).per(8)
+    @items = Item.where(is_active: true)
+    @items = Item.page(params[:page]).per(8).order(created_at: :desc)
     @genres = Genre.all
   end
 
