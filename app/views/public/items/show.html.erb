@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <%= render 'list', item: @item %>
+    <%= render 'list', genres: @genres %>
     <div class="item col-3">
       <% if @item.image.attached? %>
         <%= image_tag @item.image, size: "200x200" %>

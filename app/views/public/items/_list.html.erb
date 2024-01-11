@@ -4,11 +4,11 @@
           <th>ジャンル検索</th>
         </tr>
         <tr>
-          <% @genres.each do |genre| %>
+          <% genres.each do |genre| %>
           <td>
-            <%= genre.name %>
+            <%= link_to genre.name, items_path(genre_name: genre.name) %>
           </td>
         </tr>
-        <% end %>
+          <% end %>
       </table>
 </div>

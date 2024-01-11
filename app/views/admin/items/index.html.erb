@@ -1,6 +1,12 @@
 <div class="container">
   <div class="row">
-    <div class="bg-secondary info col-4">商品一覧</div>
+    <div class="col-8">商品一覧</div>
+    <div class="col-1"></div>
+    <div class="col-3">
+      <%= link_to new_admin_item_path do %>
+      <i class="fa-solid fa-plus"></i>
+      <% end %>
+    </div>
   </div>
 
   <div class="row">
