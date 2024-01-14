@@ -1,13 +1,11 @@
-<h2>TOP</h2>
 <div class="container">
   <div class="row">
-    <div class="genre col-3">
+    <div class="col-3">
       <%= render 'public/items/list', genres: @genres %>
     </div>
-    <div class="col-1"></div>
-    <div class="main col-5">
+    <div class="col-6 m-4">
       <div class="border">
-        ようこそながのCAKEへ！<br />
+        ようこそ、ながのCAKEへ！<br />
         このサイトは、ケーキ販売のECサイトになります。<br />
         会員でない方も商品の閲覧はできますが、<br />
         購入には会員登録が必要になります。
@@ -15,11 +13,11 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-4"></div>
-    <div class="col-3">新着商品</div>
+    <div class="col-3"></div>
+    <div class="col-3 h2 m-2">新着商品</div>
   </div>
   <div class="row">
-    <div class="col-4"></div>
+    <div class="col-3 m-1"></div>
   <% @items.each do |item| %>
   <% if @count == 4 %>
   <% break %>

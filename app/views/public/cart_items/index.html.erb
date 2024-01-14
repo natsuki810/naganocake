@@ -1,8 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col">
-     <h2 class="d-flex align-items-center justify-content-center">ショッピングカート</h2>
-    </div>
+     <div class="h4 p-1 m-3 bg-light text-bark">ショッピングカート</div>
   </div>
   <div class="row">
     <div class="col">
@@ -47,7 +45,8 @@
       </tbody>
     </table>
     <table class="table">
-          <div class="col-6"><%= link_to "買い物を続ける", items_path, class: "btn btn-primary" %></div>
+          <div class="table-borderless"><%= link_to "買い物を続ける", items_path, class: "btn btn-primary" %></div>
+          <div class="table-borderless col-4"></div>
           <div class="border border-dark col-3">合計金額</div>
           <div class="border border-dark col-3"><%= @total %></div>
     </table>

@@ -1,48 +1,49 @@
 <div class="container">
   <div class="row">
-    <div class="titel col-4">商品詳細</div>
+    <div class="h4 p-2 m-3 bg-light text-bark">商品詳細</div>
   </div>
   <div class="row">
-    <div class="item col-3">
+    <div class="col-3 m-1">
       <% if @item.image.attached? %>
         <%= image_tag @item.image, size: "200x200" %>
       <% else %>
         <%= image_tag 'no_image', size: "200x200" %>
       <% end %>
     </div>
-    <div class="col-1"></div>
     <div class="item col-5">
-      <table class="item table table-borderless">
+      <table class="table table-borderless">
         <tr>
-          <th>商品名</th>
-          <td><%= @item.name %></td>
+          <td scope="col">商品名</td>
+          <td scope="col"><%= @item.name %></td>
         </tr>
         <tr>
-          <th>商品説明</th>
-          <td><%= @item.introduction %></td>
+          <td scope="col">商品説明</td>
+          <td scope="col"><%= @item.introduction %></td>
         </tr>
         <tr>
-          <th>ジャンル</th>
-          <td><%= @item.genre.name %></td>
+          <td scope="col">ジャンル</td>
+          <td scope="col"><%= @item.genre.name %></td>
         </tr>
         <tr>
-          <th>税込価格<br />（税抜価格）</th>
-          <td><%= @item.price.to_s(:delimited) %>
+          <td scope="col">税込価格<br />（税抜価格）</td>
+          <td scope="col"><%= @item.price.to_s(:delimited) %>
               (<%= @item.add_tax_price.to_s(:delimited) %>)円</td>
         </tr>
         <tr>
-          <th>販売ステータス</th>
-          <td>
+          <td scope="col">販売ステータス</td>
+          <td scope="col">
             <% if @item.is_active %>
-             販売中
+            <span class="font-weight-bold text-success">販売中</span>
             <% else %>
-             販売停止中
+            <span class="font-weight-bold text-secondary">販売停止中</span>
             <% end %>
           </td>
         </tr>
         <tr>
-          <th></th>
-          <td><%= link_to "編集する", edit_admin_item_path, class: "btn btn-success" %></td>
+          <td scope="col"></td>
+          <td scope="col">
+            <%= link_to "編集する", edit_admin_item_path, class: "btn btn-success" %>
+          </td>
         </tr>
       </table>
     </div>

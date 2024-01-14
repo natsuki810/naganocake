@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col">注文情報確認</div>
+    <div class="h4 p-2 m-3 bg-light text-bark">注文情報確認</div>
   </div>
   <div class="row">
     <div class="col-8">
@@ -46,21 +46,23 @@
       </table>
     </div>
   </div>
-      <div class="row">
+      <div class="d-flex align-items-center justify-content-center">
         <div class="col-4">支払い方法</div>
         <div class="col-8"><%= Order.payment_methods_i18n[@order.payment_method.to_sym] %></div>
       </div>
-      <div class="row">
+      <div class="d-flex align-items-center justify-content-center">
         <div class="col-4">お届け先</div>
         <div class="col-8">〒<%= @order.postal_code %><%= @order.address %><rb><%= @order.name %></div>
       </div>
       <%= form_with model: @order do |f| %>
-      <%= f.hidden_field :postal_code, :value => @order.postal_code %>
-      <%= f.hidden_field :address, :value => @order.address %>
-      <%= f.hidden_field :name, :value => @order.name %>
-      <%= f.hidden_field :postage, :value => @order.postage %>
-      <%= f.hidden_field :total_payment, :value => @total_price %>
-      <%= f.hidden_field :payment_method, :value => @order.payment_method %>
-      <%= f.submit "注文を確定する", class:"btn btn-success" %>
+      <div class="d-flex align-items-center justify-content-center m-2">
+        <%= f.hidden_field :postal_code, :value => @order.postal_code %>
+        <%= f.hidden_field :address, :value => @order.address %>
+        <%= f.hidden_field :name, :value => @order.name %>
+        <%= f.hidden_field :postage, :value => @order.postage %>
+        <%= f.hidden_field :total_payment, :value => @total_price %>
+        <%= f.hidden_field :payment_method, :value => @order.payment_method %>
+        <%= f.submit "注文を確定する", class:"btn btn-success" %>
       <% end %>
+      </div>
 </div>

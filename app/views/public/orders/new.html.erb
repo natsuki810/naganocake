@@ -1,24 +1,24 @@
 <%= form_with model: @order, url: orders_confirm_path do |f| %>
 <div class="container">
   <div class="row">
-    <div class="col">注文情報入力</div>
+    <div class="h4 p-2 m-3 bg-light text-bark">注文情報入力</div>
   </div>
   <div class="row">
-    <div class="col">支払い方法</div>
+    <div class="font-weight-bold mt-1">支払い方法</div>
   </div>
   <div class="row">
-    <div class="col">
+    <div class="col mt-1">
        <%= f.radio_button :payment_method, Order.payment_methods.key(0) %>
-       <%= f.label Order.payment_methods_i18n[:credit_card] %>
+       <%= f.label Order.payment_methods_i18n[:credit_card] %><br>
        <%= f.radio_button :payment_method, Order.payment_methods.key(1) %>
        <%= f.label Order.payment_methods_i18n[:transfer]%>
     </div>
   </div>
   <div class="row">
-    <div class="col">お届け先</div>
+    <div class="font-weight-bold mt-1">お届け先</div>
   </div>
   <div class="row">
-    <div class="col">
+    <div class="col mt-1">
       <%= f.radio_button :address_select, "1" %>
       <%= f.label :address_select_1, "ご自身の住所" %>
     </div>
@@ -31,7 +31,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col">
+    <div class="col mt-1">
        <%= f.radio_button :address_select, "2" %>
        <%= f.label :address_select_2, "登録済住所から選択" %>
     </div>
@@ -42,20 +42,38 @@
     </div>
   </div>
   <div class="row">
-    <div class="col">
+    <div class="col mt-1">
        <%= f.radio_button :address_select, "3" %>
        <%= f.label :address_select_3, "新しいお届け先" %>
     </div>
   </div>
   <div class="row">
-    <div class="col">
+    <div class="col-3 mt-1">
        <%= f.label :postal_code, "郵便番号（ハイフンなし）" %>
+    </div>
+    <div class="col-3 mt-1">
        <%= f.text_field :postal_code, class: "form-control" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3 mt-1">
        <%= f.label :address, "住所" %>
+    </div>
+    <div class="col-6 mt-1">
        <%= f.text_field :address, class: "form-control" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3 mt-1">
        <%= f.label :name, "宛名" %>
+    </div>
+    <div class="col-3 mt-1">
        <%= f.text_field :name, class: "form-control" %>
-       <%= f.submit '登録', class: "btn btn-success" %>
+    </div>
+  </div>
+  <div class="d-flex align-items-center justify-content-center">
+    <div class="col-3 m-3">
+       <%= f.submit '確認画面へ進む', class: "btn btn-primary" %>
     </div>
   </div>
 <% end %>

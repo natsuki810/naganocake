@@ -1,44 +1,46 @@
-<h2>会員情報編集</h2>
 <%= form_with model: @customer do |f| %>
 <div class="container">
   <div class="row">
-    <div class="field col-3">氏名</div>
-    <div class="col-1"></div>
-    <div class="field col-3"><%= f.text_field :last_name, class: "form-control" %></div>
-    <div class="field col-3"><%= f.text_field :first_name, class: "form-control" %></div>
+    <div class="h4 p-2 m-3 bg-light text-bark">会員情報編集</div>
   </div>
   <div class="row">
-    <div class="field col-3">フリガナ</div>
-    <div class="col-1"></div>
-    <div class="field col-3"><%= f.text_field :last_name_kana, class: "form-control" %></div>
-    <div class="field col-3"><%= f.text_field :first_nama_kana, class: "form-control" %></div>
+    <div class="col-3 m-1">氏名</div>
+    <div class="col-1 m-1"></div>
+    <div class="col-3 m-1"><%= f.text_field :last_name, class: "form-control" %></div>
+    <div class="col-3 m-1"><%= f.text_field :first_name, class: "form-control" %></div>
   </div>
   <div class="row">
-    <div class="field col-3">郵便番号</div>
-    <div class="col-1"></div>
-    <div class="field clo-3"><%= f.text_field :postal_code, class: "form-control" %></div>
+    <div class="col-3 m-1">フリガナ</div>
+    <div class="col-1 m-1"></div>
+    <div class="col-3 m-1"><%= f.text_field :last_name_kana, class: "form-control" %></div>
+    <div class="col-3 m-1"><%= f.text_field :first_nama_kana, class: "form-control" %></div>
   </div>
   <div class="row">
-    <div class="field col-3">住所</div>
-    <div class="col-1"></div>
-    <div class="field clo-3"><%= f.text_field :address, class: "form-control" %></div>
+    <div class="col-3 m-1">郵便番号</div>
+    <div class="col-1 m-1"></div>
+    <div class="col-3 m-1"><%= f.text_field :postal_code, class: "form-control" %></div>
   </div>
   <div class="row">
-    <div class="field col-3">電話番号</div>
-    <div class="col-1"></div>
-    <div class="field clo-3"><%= f.text_field :telephone_number, class: "form-control" %></div>
+    <div class="col-3 m-1">住所</div>
+    <div class="col-1 m-1"></div>
+    <div class="col-3 m-1"><%= f.text_field :address, class: "form-control" %></div>
   </div>
   <div class="row">
-    <div class="field col-3">メールアドレス</div>
-    <div class="col-1"></div>
-    <div class="field clo-3"><%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %></div>
+    <div class="col-3 m-1">電話番号</div>
+    <div class="col-1 m-1"></div>
+    <div class="col-3 m-1"><%= f.text_field :telephone_number, class: "form-control" %></div>
   </div>
   <div class="row">
-    <div class="col-3"></div>
-    <div class="col-1"></div>
-    <div class="field col-3">
+    <div class="col-3 m-1">メールアドレス</div>
+    <div class="col-1 m-1"></div>
+    <div class="col-3 m-1"><%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %></div>
+  </div>
+  <div class="row">
+    <div class="col-3 m-1"></div>
+    <div class="col-1 m-1"></div>
+    <div class="col-3 m-2">
       <%= f.submit "編集内容を保存", class: "btn btn-success" %></div>
-    <div class="field col-3">
+    <div class="col-3 m-2">
       <%= link_to "退会する", customers_confirm_path, class: "btn btn-danger" %></div>
   </div>
       <% end %>
