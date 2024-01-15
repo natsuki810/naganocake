@@ -48,7 +48,7 @@ class Public::OrdersController < ApplicationController
   end
 
   def index
-    @orders = Order.all.reverse
+    @orders = current_customer.orders.all.reverse
   end
 
   def show
