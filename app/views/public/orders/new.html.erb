@@ -38,7 +38,7 @@
   </div>
   <div class="row">
     <div class="col">
-       <%= f.select :address_id, options_from_collection_for_select(ShoppingAddress.all, :id, :address_display) %>
+       <%= f.select :address_id, options_from_collection_for_select(current_customer.shopping_address.all, :id, :address_display) %>
     </div>
   </div>
   <div class="row">
